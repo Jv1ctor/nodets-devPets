@@ -127,9 +127,17 @@ const animals: Animal[] = [
       sex: 'Masculino'
   },
 ]
+const animalsBanner = {
+  all: 'allanimals.jpg',
+  dog: 'banner_dog.jpg',
+  cat: 'banner_cat.jpg',
+  fish: 'banner_fish.jpg',
+}
+
+type CategoryPets = 'all' | 'dog' | 'cat' | 'fish' 
 
 const Animal = {
-  getAnimals( typeFilter: 'all' | 'dog' | 'cat' | 'fish' ) {
+  getAnimals( typeFilter: CategoryPets) {
     return animals.filter( (item) => {
       if(item.type === typeFilter){
         return item
@@ -139,6 +147,9 @@ const Animal = {
       }
       return null
     }) 
+  },
+  getBanner(typeBanner: CategoryPets ) {
+    return animalsBanner[typeBanner]
   }
 }
 
