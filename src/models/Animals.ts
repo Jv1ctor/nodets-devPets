@@ -136,17 +136,27 @@ const animalsBanner = {
 
 type CategoryPets = 'all' | 'dog' | 'cat' | 'fish' 
 
+const filterAnimals = (filter: CategoryPets) => {
+  return animals.filter( (item) => {
+    if(item.type === filter){
+      return item
+    }
+    if(filter === 'all'){
+      return item
+    }
+    return null
+  })
+}
+
 const Animal = {
-  getAnimals( typeFilter: CategoryPets) {
-    return animals.filter( (item) => {
-      if(item.type === typeFilter){
-        return item
-      }
-      if(typeFilter === 'all'){
-        return item
-      }
-      return null
-    }) 
+  getAnimals( typeFilter: CategoryPets, nameAnimal: string | undefined) {
+    const filteredAnimals = filterAnimals(typeFilter)
+
+    if(typeof nameAnimal !== 'undefined'){
+      return filteredAnimals.filter( ({ name }) => name.toLowerCase().startsWith(nameAnimal.toLowerCase()))
+    }
+
+    return filteredAnimals
   },
   getBanner(typeBanner: CategoryPets ) {
     return animalsBanner[typeBanner]
@@ -154,4 +164,4 @@ const Animal = {
 }
 
 
-export default Animal
+export {Animal, CategoryPets} 
