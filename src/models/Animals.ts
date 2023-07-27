@@ -149,17 +149,16 @@ const filterAnimals = (filter: CategoryPets) => {
 }
 
 const Animal = {
-  getAnimals( typeFilter: CategoryPets, nameAnimal: string | undefined) {
+  getAnimals(typeFilter: CategoryPets) {
     const filteredAnimals = filterAnimals(typeFilter)
-
-    if(typeof nameAnimal !== 'undefined'){
-      return filteredAnimals.filter( ({ name }) => name.toLowerCase().startsWith(nameAnimal.toLowerCase()))
-    }
-
     return filteredAnimals
   },
   getBanner(typeBanner: CategoryPets ) {
     return animalsBanner[typeBanner]
+  },
+  searchAnimals(typeFilter: CategoryPets, nameAnimal: string) {
+    const filteredAnimals = filterAnimals(typeFilter)
+    return filteredAnimals.filter( ({ name }) => name.toLowerCase().startsWith(nameAnimal.toLowerCase()))
   }
 }
 
