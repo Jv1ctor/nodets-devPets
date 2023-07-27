@@ -9,3 +9,6 @@ Projeto feito no módulo do curso de Node + typescript da b7web
 
 ### Para rodar o projeto
 `npm run start-dev`
+
+### link do projeto
+`https://weak-pear-badger-toga.cyclic.app/`
