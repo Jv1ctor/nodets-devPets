@@ -11,4 +11,4 @@ Projeto feito no módulo do curso de Node + typescript da b7web
 `npm run start-dev`
 
 ### link do projeto
-`https://weak-pear-badger-toga.cyclic.app/`
+<a href='https://dev-pets.cyclic.app'>https://dev-pets.cyclic.app</a>
